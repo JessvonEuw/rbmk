@@ -1,47 +1,47 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import '../styles/header.css'
+import headerStyles from './header.module.css'
 
 const Header = () => {
     return (
-        <div class="header">
-            <div class="header-left">
-                <div class="socials-cover">
+        <div className={headerStyles.header}>
+            <div className={headerStyles.leftSection}>
+                <div className={headerStyles.socialsCover}>
                     <nav>
-                        <ul>
-                            <li>
-                            <Link>Socials</Link>
+                        <ul className={headerStyles.list}>
+                            <li className={headerStyles.listItem}>
+                            <Link className={headerStyles.links}>Socials</Link>
                             </li>
                         </ul>
                     </nav>
                 </div>
-                <div class="socials-icons">
+                <div className={headerStyles.socialsIcons}>
                     <nav>
-                        <ul>
-                            <li>
-                                <Link>1</Link>
+                        <ul className={headerStyles.list}>
+                            <li className={headerStyles.listItem}>
+                                <Link className={headerStyles.links}>1</Link>
                             </li>
-                            <li>
-                                <Link>2</Link>
+                            <li className={headerStyles.listItem}>
+                                <Link className={headerStyles.links}>2</Link>
                             </li>
-                            <li>
-                                <Link>3</Link>
+                            <li className={headerStyles.listItem}>
+                                <Link className={headerStyles.links}>3</Link>
                             </li>
-                            <li>
-                                <Link>4</Link>
+                            <li className={headerStyles.listItem}>
+                                <Link className={headerStyles.links}>4</Link>
                             </li>
                         </ul>
                     </nav>
                 </div>
             </div>
-            <div class="header-right">
+            <div className={headerStyles.rightSection}>
                 <nav>
-                    <ul>
-                        <li>
-                        <Link to="/theBand">The Band</Link>
+                    <ul className={headerStyles.list}>
+                        <li className={headerStyles.listItem}>
+                            <Link className={headerStyles.links} to="/theBand">The Band</Link>
                         </li>
-                        <li>
-                        <Link to="/bookUs">Book Us</Link>
+                        <li className={headerStyles.listItem}>
+                            <Link className={headerStyles.links} to="/bookUs">Book Us</Link>
                         </li>
                     </ul>
                 </nav>

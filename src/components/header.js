@@ -19,20 +19,23 @@ const Header = () => {
                     <nav>
                         <ul className={headerStyles.list}>
                             <li className={headerStyles.listItem}>
-                                <Link className={headerStyles.links}>1</Link>
+                                <a className={headerStyles.links} href="https://www.youtube.com/">YT</a>
                             </li>
                             <li className={headerStyles.listItem}>
-                                <Link className={headerStyles.links}>2</Link>
+                                <a className={headerStyles.links} href="https://www.instagram.com/rbmk_band/">IG</a>
                             </li>
                             <li className={headerStyles.listItem}>
-                                <Link className={headerStyles.links}>3</Link>
+                                <img src="../images/fb-icon.svg" alt="FB" />
                             </li>
                             <li className={headerStyles.listItem}>
-                                <Link className={headerStyles.links}>4</Link>
+                                <a className={headerStyles.links} href="https://www.soundcloud.com">SC</a>
                             </li>
                         </ul>
                     </nav>
                 </div>
+            </div>
+            <div className={headerStyles.centerSection}>
+                <Link className={headerStyles.links} to="/"><img src="../images/logo.jpg" alt="RBMK"></img></Link>
             </div>
             <div className={headerStyles.rightSection}>
                 <nav>
@@ -51,3 +54,7 @@ const Header = () => {
 }
 
 export default Header
+
+
+
+//  <a className={headerStyles.links} href="https://www.facebook.com">FB</a>

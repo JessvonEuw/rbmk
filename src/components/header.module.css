@@ -3,6 +3,8 @@
     height: 70px;
     justify-content: space-between;
     display: flex;
+    padding-left: 25px;
+    padding-right: 20px;
 }
 
 .leftSection {
@@ -10,7 +12,7 @@
     float: left;
     margin-top: auto;
     margin-bottom: auto;
-    max-width: 33%
+    max-width: 33%;
 }
 
 .centerSection {
@@ -38,10 +40,11 @@
 .list {
   display: flex;
   list-style-type: none;
+  padding: 0;
 }
 
 .listItem {
-  margin-right: 1em;
+  margin-right: 1.5em;
 }
 
 .socialsIcons {
@@ -51,8 +54,10 @@
 .leftSection:hover .socialsIcons {display:block;}
 .leftSection:hover .socialsCover {display:none;}
 
+.links:hover {color: #888888};
 
 
-@media screen and (max-width: 500px) {
+
+@media screen and (max-width: 800px) {
 
 }

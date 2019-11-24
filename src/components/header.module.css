@@ -17,9 +17,9 @@
 
 .centerSection {
     text-align: center;
-    margin-top: auto;
-    margin-bottom: auto;
+    margin: auto;
 }
+
 
 .rightSection {
     float: right;
@@ -35,6 +35,15 @@
     font-weight: Bold;
     text-decoration: none;
     font-style: italic;
+}
+.links img {
+  max-height: 60px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.icons:hover {
+  fill: #888888
 }
 
 .list {

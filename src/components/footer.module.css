@@ -1,0 +1,82 @@
+.footer {
+  width: 410px;
+  height: 120px;
+  box-sizing: border-box;
+  padding: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border: 4px solid #5d59b7;
+  color: #ffffff;
+  background-color: #000000;
+}
+.button {
+  width: 87px;
+  height: 87px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #5d59b7;
+  border-radius: 50%;
+  background-color: #000000;
+  cursor: pointer;
+}
+.song-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.song-title {
+  width: 300px;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+.seek-bar {
+  width: 90%;
+  height: 5px;
+  background-color: gray;
+  display: flex;
+  align-items: center;
+  border-radius: 50px;
+  cursor: pointer;
+}
+.seek-bar-fill {
+  height: 5px;
+  background-color: #5d59b7;
+  border-radius: 20px;
+}
+.seek-bar-handle {
+  width: 16px;
+  height: 16px;
+  background-color: #5d59b7;
+  border-radius: 50%;
+  margin-left: -5px;
+}
+.seek-bar-timing-container {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+.seek-bar-current {
+  text-align: left;
+  font-family: "Roboto", sans-serif;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 12px;
+}
+.seek-bar-duration {
+  text-align: right;
+  font-family: "Roboto", sans-serif;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 12px;
+}
+button:focus {
+  outline: 0;
+}

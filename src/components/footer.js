@@ -1,7 +1,7 @@
 import React from "react"
 
-import playImg from "../images/Play.png"
-import pauseImg from "../images/Pause.png"
+import playImg from "../images/play.svg"
+import pauseImg from "../images/pause.svg"
 import songFilename from "../media/current_song.mp3"
 
 import footerStyles from "./footer.module.css"

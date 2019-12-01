@@ -12,38 +12,31 @@ const Header = () => {
         <div className={headerStyles.header}>
             <div className={headerStyles.leftSection}>
                 <div className={headerStyles.socialsCover}>
-                    <nav>
                         <ul className={headerStyles.list}>
                             <li className={headerStyles.listItem}>
                             <Link className={headerStyles.links}>Socials</Link>
                             </li>
                         </ul>
-                    </nav>
                 </div>
                 <div className={headerStyles.socialsIcons}>
-                    <nav>
                         <ul className={headerStyles.list}>
                             <li className={headerStyles.listItem}>
-                                <a className={headerStyles.links} href="https://www.youtube.com/"><img className={headerStyles.icons} src={yticon} alt="YT"></img></a>
+                                <a className={headerStyles.links} href="https://www.youtube.com/"><img className={headerStyles.icons} src={yticon} alt="YT"></img><label className={headerStyles.mobileLabel}>YouTube</label></a>
                             </li>
                             <li className={headerStyles.listItem}>
-                                <a className={headerStyles.links} href="https://www.instagram.com/rbmk_band/"><img src={igicon} alt="IG"></img></a>
+                                <a className={headerStyles.links} href="https://www.instagram.com/rbmk_band/"><img src={igicon} alt="IG"></img><label className={headerStyles.mobileLabel}>Instagram</label></a>
                             </li>
                             <li className={headerStyles.listItem}>
-                                <a className={headerStyles.links} href="https://www.facebook.com/"><img src={fbicon} alt="FB"></img></a>
+                                <a className={headerStyles.links} href="https://www.facebook.com/"><img src={fbicon} alt="FB"></img><label className={headerStyles.mobileLabel}>Facebook</label></a>
                             </li>
                             <li className={headerStyles.listItem}>
-                                <a className={headerStyles.links} href="https://www.soundcloud.com"><img src={scicon} alt="SC"></img></a>
+                                <a className={headerStyles.links} href="https://www.soundcloud.com/rbmk.band"><img src={scicon} alt="SC"></img><label className={headerStyles.mobileLabel}>SoundCloud</label></a>
                             </li>
                         </ul>
-                    </nav>
                 </div>
             </div>
-            <div className={headerStyles.centerSection}>
-                <Link className={headerStyles.links} to="/"><img src={logo} alt="RBMK"></img></Link>
-            </div>
+            <isHomePage />
             <div className={headerStyles.rightSection}>
-                <nav>
                     <ul className={headerStyles.list}>
                         <li className={headerStyles.listItem}>
                             <Link className={headerStyles.links} to="/theBand">The Band</Link>
@@ -52,7 +45,6 @@ const Header = () => {
                             <Link className={headerStyles.links} to="/bookUs">Book Us</Link>
                         </li>
                     </ul>
-                </nav>
             </div>
         </div>
     )
@@ -60,5 +52,14 @@ const Header = () => {
 
 export default Header
 
-
-// react prop isLogo for other pages - conditional rendering 
+function isHomePage() {
+    if (window.location.pathname !== '/') {
+        return (
+            <div className={headerStyles.centerSection}>
+                <Link className={headerStyles.links} to="/"><img src={logo} alt="RBMK"></img></Link>
+            </div>
+        );
+    } else {
+        return null;
+    }
+}

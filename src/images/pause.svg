@@ -1,6 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="87" height="87" viewBox="0 0 87 87">
+<svg id="Group_9" data-name="Group 9" xmlns="http://www.w3.org/2000/svg" width="87" height="87" viewBox="0 0 87 87">
   <g id="Ellipse_1" data-name="Ellipse 1" stroke="rgba(93,89,183,0.82)" stroke-width="4">
     <circle cx="43.5" cy="43.5" r="43.5" stroke="none"/>
     <circle cx="43.5" cy="43.5" r="41.5" fill="none"/>
   </g>
+  <line id="Line_1" data-name="Line 1" y1="44.946" transform="translate(34.72 20.817)" fill="none" stroke="rgba(93,89,183,0.82)" stroke-width="4"/>
+  <line id="Line_10" data-name="Line 10" y1="44.946" transform="translate(51.72 20.817)" fill="none" stroke="rgba(93,89,183,0.82)" stroke-width="4"/>
 </svg>

@@ -1,13 +1,17 @@
 import React from "react"
 import Layout from "../components/layout"
-import Header from "../components/header"
+import Footer from "../components/footer"
+import IndexStyles from "./index.module.scss"
 
 const homePage = () => {
-    return (
-        <div>
-            <Header />
-            <p>Hello World</p>
+  return (
+    <Layout>
+      <div className={IndexStyles.content}>
+        <div className={IndexStyles.footerPosition}>
+          <Footer className={IndexStyles.footerPosition} />
         </div>
-    )
+      </div>
+    </Layout>
+  )
 }
 export default homePage

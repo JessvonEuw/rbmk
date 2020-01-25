@@ -1,0 +1,33 @@
+// rem conversion function
+@function pxToRem($px, $base: 16) {
+  @return ($px / $base) * 1rem;
+}
+
+// mobile first means x small does not need to be defined
+// small screen design
+@mixin small {
+  @media (min-width: #{$small-min}) {
+    @content;
+  }
+}
+
+// medium screen design
+@mixin medium {
+  @media (min-width: #{$medium-min}) {
+    @content;
+  }
+}
+
+// large screen design
+@mixin large {
+  @media (min-width: #{$large-min}) {
+    @content;
+  }
+}
+
+// x-large screen design
+@mixin xlarge {
+  @media (min-width: #{$xlarge-min}) {
+    @content;
+  }
+}

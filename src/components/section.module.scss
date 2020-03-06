@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 95%;
+  padding: 3% 7%;
+  background-color: $black1;
+  border: 8px solid $purple;
+
+  @include medium {
+    width: 70%;
+  }
+
+  @include xlarge {
+    width: 60%;
+  }
+}

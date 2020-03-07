@@ -1,6 +1,7 @@
 .header {
   background-color: black;
   height: 8vh;
+  // height: 35vh;
   justify-content: space-between;
   display: flex;
   padding-left: 25px;
@@ -8,23 +9,60 @@
 }
 
 .leftSection {
+  float: none;
+  display: none;
+
+  @include large {
+    display: block;
     text-align: left;
     float: left;
     margin-top: auto;
     margin-bottom: auto;
     width: 15%;
+  }  
 }
 
 .centerSection {
-  text-align: center;
-  margin: auto;
+  
+  display: none;
+  @include large {
+    display: block;
+    text-align: center;
+    margin: auto;
+  }
 }
 
 .rightSection {
-  float: right;
+  display: none;
+  @include large {
+    display: block;
+    float: right;
+    margin-top: auto;
+    margin-bottom: auto;
+    max-width: 33%;
+  }
+}
+
+.hamburgerMenu {
+  display: block;
   margin-top: auto;
   margin-bottom: auto;
-  max-width: 33%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  @include large {
+    display: none;
+  }
+}
+
+.hamLinks {
+  display: none;
+  overflow: hidden;
+  float: center;
+  padding-top: 10;
+  @include large {
+    display: none;
+  }
 }
 
 .links {
@@ -53,7 +91,12 @@
 }
 
 .listItem {
-  margin-right: 1.5em;
+  float: none;
+  display: block;
+  text-align: left;
+  @include large {
+    margin-right: 1.5em;
+  }
 }
 
 .socialsIcons {
@@ -63,23 +106,12 @@
 .leftSection:hover .socialsIcons {display: block;}
 .leftSection:hover .socialsCover {display: none;}
 
+
 .links:hover {color: #888888};
 
 .mobileLabel {
-  display: none;
-}
-
-@media screen and (max-width: 850px) {
-  .leftSection {
-    float: none;
+  display: inline;
+  @include large {
+    display: none;
   }
-  .rightSection {
-    float: none;
-  }
-  .listItem {
-    float: none;
-    display: block;
-    text-align: left;
-  }
-  .mobileLabel {display: inline;}
 }

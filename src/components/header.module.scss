@@ -46,9 +46,6 @@
   display: block;
   margin-top: auto;
   margin-bottom: auto;
-  position: absolute;
-  left: 0;
-  top: 0;
   @include large {
     display: none;
   }

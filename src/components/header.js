@@ -2,14 +2,14 @@ import React, {useState} from "react"
 import { Link } from "gatsby"
 import headerStyles from "./header.module.scss"
 import logo from "../images/logo.svg"
-import ham from "../images/ham-menu.png"
-
 import Icon from "../images/headerIcons"
+import BurgerMenu from "./burger"
 
 
-/*const [open, setOpen] = useState(false);*/
 
 const Header = () => {
+  const [open, setOpen] = useState(false);
+
     return (
         <div className={headerStyles.header}>
             <div className={headerStyles.leftSection}>
@@ -60,12 +60,10 @@ const Header = () => {
           </ul>
         </nav>
       </div>
-     {/*} <div className = {headerStyles.hamburgerMenu}>
-          <Link onClick={() => setOpen(true)} open={open}>
-            <img src={ham} alt="="></img>
-          </Link> 
+      <div className = {headerStyles.hamburgerMenu}>
+            <Icon name="ham"/>
+            <BurgerMenu open={open} setOpen={setOpen} />
       </div>
-    */}
     </div>
       )
 }
@@ -84,44 +82,3 @@ function isHomePage() {
     }
 }
 
-function OpenHamburgerMenu({open, setOpen}) {
-  return (
-    <div className = {headerStyles.hamLinks}>
-    <p>
-        <Link className={headerStyles.links} to="/theBand">
-          The Band
-        </Link>
-      </p>
-      <p>
-        <Link className={headerStyles.links} to="/bookUs">
-          Book Us
-        </Link>
-      </p>
-      <p>
-        <Link className={headerStyles.links} to="https://www.youtube.com/">
-          YouTube
-        </Link>
-      </p>
-      <p>
-        <Link className={headerStyles.links} to="https://www.instagram.com/rbmk_band/">
-          Instagram
-        </Link>
-      </p>
-      <p>
-        <Link className={headerStyles.links} to="https://www.facebook.com/">
-          Facebook
-        </Link>
-      </p>
-      <p>
-        <Link className={headerStyles.links} to="https://www.soundcloud.com/rbmk.band">
-          SoundCloud
-        </Link>
-      </p>
-      <p>
-        <Link className={headerStyles.links} to="/">
-          Home Page
-        </Link>
-      </p>
-  </div>
-  )
-}

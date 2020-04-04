@@ -1,7 +1,6 @@
 .header {
   background-color: black;
   height: 8vh;
-  // height: 35vh;
   justify-content: space-between;
   display: flex;
   padding-left: 25px;
@@ -84,6 +83,10 @@
   fill: #888888;
 }
 
+svg:hover {
+  fill: #888888;
+}
+
 .list {
   display: flex;
   list-style-type: none;
@@ -100,11 +103,8 @@
 }
 
 .socialsIcons {
-  display: none;
+  display: block;
 }
-
-.leftSection:hover .socialsIcons {display: block;}
-.leftSection:hover .socialsCover {display: none;}
 
 
 .links:hover {color: #888888};

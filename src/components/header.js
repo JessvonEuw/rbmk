@@ -1,37 +1,39 @@
-import React from "react"
+import React, {useState} from "react"
 import { Link } from "gatsby"
 import headerStyles from "./header.module.scss"
 import logo from "../images/logo.svg"
-import fbicon from "../images/fb-icon.svg"
-import igicon from "../images/ig-icon.svg"
-import yticon from "../images/yt-icon.svg"
-import scicon from "../images/sc-icon.svg"
 import ham from "../images/ham-menu.png"
+
+import Icon from "../images/headerIcons"
+
+
+/*const [open, setOpen] = useState(false);*/
 
 const Header = () => {
     return (
         <div className={headerStyles.header}>
             <div className={headerStyles.leftSection}>
-                <div className={headerStyles.socialsCover}>
-                        <ul className={headerStyles.list}>
-                            <li className={headerStyles.listItem}>
-                            <Link className={headerStyles.links}>Socials</Link>
-                            </li>
-                        </ul>
-                </div>
                 <div className={headerStyles.socialsIcons}>
                     <ul className={headerStyles.list}>
                         <li className={headerStyles.listItem}>
-                                <a className={headerStyles.links} href="https://www.youtube.com/"><img className={headerStyles.icons} src={yticon} alt="YT"></img><label className={headerStyles.mobileLabel}>YouTube</label></a>
+                                <a className={headerStyles.links} href="https://www.youtube.com/">
+                                  <Icon name="youtube" />
+                                </a>
                             </li>
                             <li className={headerStyles.listItem}>
-                                <a className={headerStyles.links} href="https://www.instagram.com/rbmk_band/"><img src={igicon} alt="IG"></img><label className={headerStyles.mobileLabel}>Instagram</label></a>
+                                <a className={headerStyles.links} href="https://www.instagram.com/rbmk_band/">
+                                  <Icon name="instagram" />
+                                </a>
                             </li>
                             <li className={headerStyles.listItem}>
-                                <a className={headerStyles.links} href="https://www.facebook.com/"><img src={fbicon} alt="FB"></img><label className={headerStyles.mobileLabel}>Facebook</label></a>
+                              <a className={headerStyles.links} href="https://www.facebook.com">
+                                <Icon name="facebook" />                               
+                              </a> 
                             </li>
                             <li className={headerStyles.listItem}>
-                                <a className={headerStyles.links} href="https://www.soundcloud.com/rbmk.band"><img src={scicon} alt="SC"></img><label className={headerStyles.mobileLabel}>SoundCloud</label></a>
+                                <a className={headerStyles.links} href="https://www.soundcloud.com/rbmk.band">
+                                  <Icon name="soundcloud" />
+                                </a>
                             </li>
                         </ul>
                 </div>
@@ -58,48 +60,12 @@ const Header = () => {
           </ul>
         </nav>
       </div>
-      <div className = {headerStyles.hamburgerMenu}>
-          <Link className={headerStyles.links} to="/">
-            <img src={ham} alt="R"></img>
+     {/*} <div className = {headerStyles.hamburgerMenu}>
+          <Link onClick={() => setOpen(true)} open={open}>
+            <img src={ham} alt="="></img>
           </Link> 
       </div>
-      <div className = {headerStyles.hamLinks}>
-                <p>
-                    <Link className={headerStyles.links} to="/theBand">
-                      The Band
-                    </Link>
-                  </p>
-                  <p>
-                    <Link className={headerStyles.links} to="/bookUs">
-                      Book Us
-                    </Link>
-                  </p>
-                  <p>
-                    <Link className={headerStyles.links} to="https://www.youtube.com/">
-                      YouTube
-                    </Link>
-                  </p>
-                  <p>
-                    <Link className={headerStyles.links} to="https://www.instagram.com/rbmk_band/">
-                      Instagram
-                    </Link>
-                  </p>
-                  <p>
-                    <Link className={headerStyles.links} to="https://www.facebook.com/">
-                      Facebook
-                    </Link>
-                  </p>
-                  <p>
-                    <Link className={headerStyles.links} to="https://www.soundcloud.com/rbmk.band">
-                      SoundCloud
-                    </Link>
-                  </p>
-                  <p>
-                    <Link className={headerStyles.links} to="/">
-                      Home Page
-                    </Link>
-                  </p>
-          </div>
+    */}
     </div>
       )
 }
@@ -116,4 +82,46 @@ function isHomePage() {
     } else {
         return null;
     }
+}
+
+function OpenHamburgerMenu({open, setOpen}) {
+  return (
+    <div className = {headerStyles.hamLinks}>
+    <p>
+        <Link className={headerStyles.links} to="/theBand">
+          The Band
+        </Link>
+      </p>
+      <p>
+        <Link className={headerStyles.links} to="/bookUs">
+          Book Us
+        </Link>
+      </p>
+      <p>
+        <Link className={headerStyles.links} to="https://www.youtube.com/">
+          YouTube
+        </Link>
+      </p>
+      <p>
+        <Link className={headerStyles.links} to="https://www.instagram.com/rbmk_band/">
+          Instagram
+        </Link>
+      </p>
+      <p>
+        <Link className={headerStyles.links} to="https://www.facebook.com/">
+          Facebook
+        </Link>
+      </p>
+      <p>
+        <Link className={headerStyles.links} to="https://www.soundcloud.com/rbmk.band">
+          SoundCloud
+        </Link>
+      </p>
+      <p>
+        <Link className={headerStyles.links} to="/">
+          Home Page
+        </Link>
+      </p>
+  </div>
+  )
 }

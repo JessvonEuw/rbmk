@@ -1,4 +1,4 @@
-.footer {
+.player {
   width: 410px;
   height: 120px;
   box-sizing: border-box;
@@ -10,6 +10,7 @@
   color: #ffffff;
   background-color: #000000;
 }
+
 .button {
   width: 87px;
   height: 87px;

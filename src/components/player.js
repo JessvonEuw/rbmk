@@ -9,6 +9,7 @@ import songFilename from "../media/current_song.mp3"
 const MediaPlayer = ({ isEnabled }) => {
   const [seekValue, setSeekValue] = useState(0)
   const [songDuration, setSongDuration] = useState()
+  const [songCurrentTime, setSongCurrentTime] = useState(0)
   const [buttonImg, setButtonImg] = useState(playImg)
 
   // Setting up the song variables
@@ -21,11 +22,7 @@ const MediaPlayer = ({ isEnabled }) => {
   song.src = currentSong.filename
 
   // Value
-  const seekStart = () => {
-    if (!song.paused) {
-      song.pause()
-    }
-  }
+  const seekStart = () => {}
 
   // Move the slider while dragging
   const seekChange = changeValue => {
@@ -34,6 +31,7 @@ const MediaPlayer = ({ isEnabled }) => {
 
   // Move the slider while dragging
   const seekEnd = endValue => {
+    song.pause()
     song.currentTime = endValue * songDuration
     song.play()
   }
@@ -42,6 +40,7 @@ const MediaPlayer = ({ isEnabled }) => {
   const onPlaybackChange = () => {
     console.log("Playback change")
     console.log(song.paused)
+    console.log(song)
 
     if (song.paused) {
       console.log("Playing...")
@@ -61,7 +60,22 @@ const MediaPlayer = ({ isEnabled }) => {
 
   // Fires whenever the current time changes on the audio file (i.e. while it's playing)
   song.addEventListener("timeupdate", function() {
-    setSeekValue(song.currentTime / songDuration)
+    setSongCurrentTime(song.currentTime)
+    console.log(song.currentTime)
+
+    // While the song is playing, increment the seek bar position
+    if (song.currentTime < songDuration) {
+      setSeekValue(song.currentTime / songDuration)
+    }
+
+    // At the end of the song, put the seek bar back at the beginning and set the song
+    // time back to zero
+    else {
+      setSeekValue(0)
+      song.currentTime = 0
+      setButtonImg(playImg)
+    }
+    console.log()
   })
 
   // A colored bar that will represent the current value
@@ -121,7 +135,7 @@ const MediaPlayer = ({ isEnabled }) => {
           className={playerStyles.button}
           onClick={() => onPlaybackChange()}
         >
-          <img src={buttonImg} />
+          <img src={buttonImg} alt="Play/Pause" />
         </button>
       </div>
       <div className={playerStyles.songContainer}>
@@ -136,6 +150,14 @@ const MediaPlayer = ({ isEnabled }) => {
           <SliderBar className={playerStyles.seekBarFill} />
           <SliderHandle className={playerStyles.seekBarHandle} />
         </Slider>
+        <div className={playerStyles.seekBarTimingContainer}>
+          <div className={playerStyles.seekBarCurrent}>
+            <FormattedTime numSeconds={songCurrentTime} />
+          </div>
+          <div className={playerStyles.seekBarDuration}>
+            <FormattedTime numSeconds={songDuration} />
+          </div>
+        </div>
       </div>
     </div>
   )

@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Slider, FormattedTime } from "react-player-controls"
+import { Button, Slider, FormattedTime } from "react-player-controls"
 import playerStyles from "./player.module.css"
 
 import playImg from "../images/play.svg"
@@ -21,7 +21,7 @@ const MediaPlayer = ({ isEnabled }) => {
   let song = new Audio()
   song.src = currentSong.filename
 
-  // Value
+  // Nothing needs to happen when the seeking starts
   const seekStart = () => {}
 
   // Move the slider while dragging
@@ -31,24 +31,26 @@ const MediaPlayer = ({ isEnabled }) => {
 
   // Move the slider while dragging
   const seekEnd = endValue => {
-    song.pause()
+    //song.pause()
     song.currentTime = endValue * songDuration
-    song.play()
+    //song.play()
   }
 
   // Plays or pauses the chosen song
   const onPlaybackChange = () => {
-    console.log("Playback change")
-    console.log(song.paused)
-    console.log(song)
+    //console.log("Playback change")
+    //console.log(song.paused)
+    //console.log(song)
 
     if (song.paused) {
-      console.log("Playing...")
+      //console.log("Playing...")
       song.play()
+      //console.log(song.paused)
       setButtonImg(pauseImg)
     } else {
-      console.log("Paused.")
+      //console.log("Paused.")
       song.pause()
+      //console.log(song.paused)
       setButtonImg(playImg)
     }
   }
@@ -78,65 +80,12 @@ const MediaPlayer = ({ isEnabled }) => {
     console.log()
   })
 
-  // A colored bar that will represent the current value
-  const SliderBar = () => (
-    <div
-      style={Object.assign(
-        {},
-        {
-          position: "absolute",
-          background: "#5d59b7",
-          borderRadius: 4,
-        },
-        {
-          top: 0,
-          bottom: 0,
-          left: 0,
-          width: `${seekValue * 100}%`,
-        }
-      )}
-      id="seekBar"
-    />
-  )
-
-  // A handle to indicate the current value
-  const SliderHandle = ({ style }) => (
-    <div
-      style={Object.assign(
-        {},
-        {
-          position: "absolute",
-          width: 16,
-          height: 16,
-          background: "#5d59b7",
-          borderRadius: "100%",
-          transform: "scale(1)",
-          transition: "transform 0.2s",
-          "&:hover": {
-            transform: "scale(1.3)",
-          },
-        },
-        {
-          top: 0,
-          left: `${seekValue * 100}%`,
-          marginTop: -4,
-          marginLeft: -8,
-        },
-        style
-      )}
-      id="seekBarHandle"
-    />
-  )
-
   return (
     <div className={playerStyles.player}>
       <div>
-        <button
-          className={playerStyles.button}
-          onClick={() => onPlaybackChange()}
-        >
+        <Button className={playerStyles.button} onClick={onPlaybackChange}>
           <img src={buttonImg} alt="Play/Pause" />
-        </button>
+        </Button>
       </div>
       <div className={playerStyles.songContainer}>
         <div className={playerStyles.songTitle}>{currentSong.title}</div>
@@ -147,8 +96,18 @@ const MediaPlayer = ({ isEnabled }) => {
           onChangeEnd={seekEnd}
           className={playerStyles.seekBar}
         >
-          <SliderBar className={playerStyles.seekBarFill} />
-          <SliderHandle className={playerStyles.seekBarHandle} />
+          <div
+            className={playerStyles.seekBarFill}
+            style={Object.assign({
+              width: `${seekValue * 100}%`,
+            })}
+          ></div>
+          <div
+            className={playerStyles.seekBarHandle}
+            style={Object.assign({
+              left: `${seekValue * 100}%`,
+            })}
+          ></div>
         </Slider>
         <div className={playerStyles.seekBarTimingContainer}>
           <div className={playerStyles.seekBarCurrent}>

@@ -10,16 +10,15 @@ const aboutPage = () => {
         <Section>
           <h1 className={AboutStyles.header}>About</h1>
           <p className={AboutStyles.text}>
-            Carrot cake bear claw pudding sweet roll. Dessert ice cream bonbon
-            gingerbread jelly-o. Gummi bears sesame snaps chocolate bar candy
-            macaroon lollipop chocolate. Jelly beans bonbon donut dessert gummi
-            bears tiramisu marshmallow dragée. Candy powder macaroon cheesecake
-            sweet bonbon dragée donut brownie.
-          </p>
-          <p className={AboutStyles.text}>
-            Bonbon lollipop cotton candy jelly carrot cake sweet sweet danish
-            cookie. Cotton candy biscuit chocolate bar caramels. Wafer dragée
-            lemon drops brownie dragée soufflé cheesecake chocolate.{" "}
+            Summer 2019 saw a coalescing of some friends that would give life to
+            RBMK. With their infectious melodies, engaging lyrics, and complex
+            four-voice harmonies, these artists boast nearly a century of
+            combined musical experience. Their energising, genre-defying sound
+            will have you on your feet and shouting for more. Whether you find
+            yourself caught in the waves of crashing overtones of “The Storm” or
+            reliving the unanticipated electricity of an impetuous romance in
+            “Man With a Plan,” RBMK offers both the escapism we crave and the
+            introspection we need.
           </p>
         </Section>
       </div>

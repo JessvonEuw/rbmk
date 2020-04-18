@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { Button, Slider, FormattedTime } from "react-player-controls"
 import playerStyles from "./player.module.css"
 
@@ -6,10 +6,72 @@ import playImg from "../images/play.svg"
 import pauseImg from "../images/pause.svg"
 import songFilename from "../media/current_song.mp3"
 
-const MediaPlayer = ({ isEnabled }) => {
+// The audio hook
+const useAudio = songSrc => {
+  const [audio] = useState(new Audio(songSrc))
+  const [playing, setPlaying] = useState(false)
+  const [currentTime, setCurrentTime] = useState(0)
+  const [duration, setDuration] = useState()
   const [seekValue, setSeekValue] = useState(0)
-  const [songDuration, setSongDuration] = useState()
-  const [songCurrentTime, setSongCurrentTime] = useState(0)
+
+  // Toggle the song between playing and paused
+  const toggle = () => setPlaying(!playing)
+
+  // Set a new song current time
+  const setSongTime = songTime => {
+    audio.currentTime = songTime
+  }
+
+  // Toggle the song playing
+  useEffect(() => {
+    playing ? audio.play() : audio.pause()
+  }, [audio, playing])
+
+  // Fires when the song has ended
+  useEffect(() => {
+    audio.addEventListener("loadedmetadata", () => setDuration(audio.duration))
+    return () => {
+      audio.removeEventListener("loadedmetadata", () =>
+        setDuration(audio.duration)
+      )
+    }
+  }, [audio, setDuration])
+
+  // Fires whenever the current time changes on the audio file (i.e. while it's playing)
+  useEffect(() => {
+    audio.addEventListener("timeupdate", function() {
+      // While the song is playing, increment the seek bar position
+      setCurrentTime(audio.currentTime)
+      setSeekValue(audio.currentTime / duration)
+    })
+  }, [audio, setCurrentTime, duration, setSeekValue])
+
+  // Fires when the song has ended
+  useEffect(() => {
+    audio.addEventListener("ended", () => {
+      setPlaying(false)
+      setCurrentTime(0)
+      setSeekValue(0)
+    })
+    return () => {
+      audio.removeEventListener("ended", () => setPlaying(false))
+    }
+  }, [audio, setPlaying])
+
+  return {
+    playing,
+    toggle,
+    setSongTime,
+    currentTime,
+    setCurrentTime,
+    duration,
+    seekValue,
+    setSeekValue,
+  }
+}
+
+// The media player component
+const MediaPlayer = ({ isEnabled }) => {
   const [buttonImg, setButtonImg] = useState(playImg)
 
   // Setting up the song variables
@@ -18,8 +80,20 @@ const MediaPlayer = ({ isEnabled }) => {
     filename: songFilename,
   }
 
-  let song = new Audio()
-  song.src = currentSong.filename
+  const {
+    playing,
+    toggle,
+    setSongTime,
+    currentTime,
+    setCurrentTime,
+    duration,
+    seekValue,
+    setSeekValue,
+  } = useAudio(songFilename)
+
+  //console.log(song ? song : "No song ready!")
+
+  //const song = new Audio(currentSong.filename)
 
   // Nothing needs to happen when the seeking starts
   const seekStart = () => {}
@@ -27,58 +101,24 @@ const MediaPlayer = ({ isEnabled }) => {
   // Move the slider while dragging
   const seekChange = changeValue => {
     setSeekValue(changeValue)
+    setCurrentTime(changeValue * duration)
   }
 
-  // Move the slider while dragging
+  // Called when the seek slider is released (seeking ends)
   const seekEnd = endValue => {
-    //song.pause()
-    song.currentTime = endValue * songDuration
-    //song.play()
+    setSongTime(endValue * duration)
   }
 
   // Plays or pauses the chosen song
   const onPlaybackChange = () => {
-    //console.log("Playback change")
-    //console.log(song.paused)
-    //console.log(song)
-
-    if (song.paused) {
-      //console.log("Playing...")
-      song.play()
-      //console.log(song.paused)
-      setButtonImg(pauseImg)
-    } else {
-      //console.log("Paused.")
-      song.pause()
-      //console.log(song.paused)
+    if (playing) {
+      toggle()
       setButtonImg(playImg)
+    } else {
+      toggle()
+      setButtonImg(pauseImg)
     }
   }
-
-  // Fires when the song's metadata is loaded (i.e. when the page loads)
-  song.addEventListener("loadedmetadata", function() {
-    setSongDuration(song.duration)
-  })
-
-  // Fires whenever the current time changes on the audio file (i.e. while it's playing)
-  song.addEventListener("timeupdate", function() {
-    setSongCurrentTime(song.currentTime)
-    console.log(song.currentTime)
-
-    // While the song is playing, increment the seek bar position
-    if (song.currentTime < songDuration) {
-      setSeekValue(song.currentTime / songDuration)
-    }
-
-    // At the end of the song, put the seek bar back at the beginning and set the song
-    // time back to zero
-    else {
-      setSeekValue(0)
-      song.currentTime = 0
-      setButtonImg(playImg)
-    }
-    console.log()
-  })
 
   return (
     <div className={playerStyles.player}>
@@ -111,10 +151,10 @@ const MediaPlayer = ({ isEnabled }) => {
         </Slider>
         <div className={playerStyles.seekBarTimingContainer}>
           <div className={playerStyles.seekBarCurrent}>
-            <FormattedTime numSeconds={songCurrentTime} />
+            <FormattedTime numSeconds={currentTime} />
           </div>
           <div className={playerStyles.seekBarDuration}>
-            <FormattedTime numSeconds={songDuration} />
+            <FormattedTime numSeconds={duration} />
           </div>
         </div>
       </div>

@@ -9,7 +9,19 @@ import BurgerMenu from "./burger"
 
 const Header = () => {
   const [open, setOpen] = useState(false);
-
+  function IsHomePage() {
+    if (window.location.pathname !== '/') {
+        return (
+          <div className={headerStyles.centerSection}>
+          <Link className={headerStyles.links} to="/">
+            <img src={logo} alt="RBMK"></img>
+          </Link>
+        </div>
+        );
+    } else {
+        return null;
+    }
+}
     return (
         <div className={headerStyles.header}>
             <div className={headerStyles.leftSection}>
@@ -38,12 +50,7 @@ const Header = () => {
                         </ul>
                 </div>
             </div>
-            <isHomePage />
-      <div className={headerStyles.centerSection}>
-        <Link className={headerStyles.links} to="/">
-          <img src={logo} alt="RBMK"></img>
-        </Link>
-      </div>
+            <IsHomePage />
       <div className={headerStyles.rightSection}>
         <nav>
           <ul className={headerStyles.list}>
@@ -61,8 +68,8 @@ const Header = () => {
         </nav>
       </div>
       <div className = {headerStyles.hamburgerMenu}>
-            <Icon name="ham"/>
-            <BurgerMenu open={open} setOpen={setOpen} />
+            <a onClick={() => setOpen(!open)}><Icon name="ham" /></a>
+            {open && <BurgerMenu />}
       </div>
     </div>
       )
@@ -70,15 +77,5 @@ const Header = () => {
 
 export default Header
 
-function isHomePage() {
-    if (window.location.pathname !== '/') {
-        return (
-            <div className={headerStyles.centerSection}>
-                <Link className={headerStyles.links} to="/"><img src={logo} alt="RBMK"></img></Link>
-            </div>
-        );
-    } else {
-        return null;
-    }
-}
+
 

@@ -5,50 +5,40 @@ import headerStyles from "./header.module.scss"
 
 
 
-const Burger = ({open, setOpen}) => { 
+const Burger = ({open}) => { 
     return (
         <div className = {headerStyles.hamLinks}>
-    <p>
-        <Link className={headerStyles.links} to="/theBand">
+
+        <Link className={headerStyles.hamLinkyLinks} to="/theBand">
           The Band
         </Link>
-      </p>
-      <p>
-        <Link className={headerStyles.links} to="/bookUs">
+        <Link className={headerStyles.hamLinkyLinks} to="/bookUs">
           Book Us
         </Link>
-      </p>
-      <p>
-        <Link className={headerStyles.links} to="https://www.youtube.com/">
+        <a className={headerStyles.hamLinkyLinks} to="https://www.youtube.com/">
           YouTube
-        </Link>
-      </p>
-      <p>
-        <Link className={headerStyles.links} to="https://www.instagram.com/rbmk_band/">
+        </a>
+        <a className={headerStyles.hamLinkyLinks} to="https://www.instagram.com/rbmk_band/">
           Instagram
-        </Link>
-      </p>
-      <p>
-        <Link className={headerStyles.links} to="https://www.facebook.com/">
+        </a>
+
+        <a className={headerStyles.hamLinkyLinks} to="https://www.facebook.com/">
           Facebook
-        </Link>
-      </p>
-      <p>
-        <Link className={headerStyles.links} to="https://www.soundcloud.com/rbmk.band">
+        </a>
+
+        <a className={headerStyles.hamLinkyLinks} to="https://www.soundcloud.com/rbmk.band">
           SoundCloud
-        </Link>
-      </p>
-      <p>
-        <Link className={headerStyles.links} to="/">
+        </a>
+
+        <Link className={headerStyles.hamLinkyLinks} to="/">
           Home Page
         </Link>
-      </p>
+  
   </div>
     )
 }
 Burger.propTypes = {
-    open: bool.isRequired,
-    setOpen: func.isRequired,
+    open: bool.isRequired
   };
 
 export default Burger

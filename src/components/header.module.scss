@@ -52,13 +52,30 @@
 }
 
 .hamLinks {
-  display: none;
   overflow: hidden;
-  float: center;
-  padding-top: 10;
+  z-index: 100;
+  position: absolute;
+  top: 8vh;
+  background-color: black;
+  width: 100%;
+  left: 0;
   @include large {
     display: none;
   }
+}
+
+.hamLinkyLinks {
+  color: white;
+  display: block;
+  font-size: 25px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: Bold;
+  text-decoration: none;
+  border: 1px solid lightslategray;
+  text-align: center;
+  font-style: italic;
+  height: 4vh;
 }
 
 .links {

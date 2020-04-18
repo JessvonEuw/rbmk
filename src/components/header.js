@@ -1,73 +1,56 @@
-import React from "react"
+import React, {useState} from "react"
 import { Link } from "gatsby"
-import headerStyles from "./header.module.css"
+import headerStyles from "./header.module.scss"
 import logo from "../images/logo.svg"
-import fbicon from "../images/fb-icon.svg"
-import igicon from "../images/ig-icon.svg"
-import yticon from "../images/yt-icon.svg"
-import scicon from "../images/sc-icon.svg"
+import Icon from "../images/headerIcons"
+import BurgerMenu from "./burger"
+
+
 
 const Header = () => {
-  return (
-    <div className={headerStyles.header}>
-      <div className={headerStyles.leftSection}>
-        <div className={headerStyles.socialsCover}>
-          <nav>
-            <ul className={headerStyles.list}>
-              <li className={headerStyles.listItem}>
-                <Link className={headerStyles.links}>Socials</Link>
-              </li>
-            </ul>
-          </nav>
+  const [open, setOpen] = useState(false);
+  function IsHomePage() {
+    if (window.location.pathname !== '/') {
+        return (
+          <div className={headerStyles.centerSection}>
+          <Link className={headerStyles.links} to="/">
+            <img src={logo} alt="RBMK"></img>
+          </Link>
         </div>
-        <div className={headerStyles.socialsIcons}>
-          <nav>
-            <ul className={headerStyles.list}>
-              <li className={headerStyles.listItem}>
-                <a
-                  className={headerStyles.links}
-                  href="https://www.youtube.com/"
-                >
-                  <img
-                    className={headerStyles.icons}
-                    src={yticon}
-                    alt="YT"
-                  ></img>
-                </a>
-              </li>
-              <li className={headerStyles.listItem}>
-                <a
-                  className={headerStyles.links}
-                  href="https://www.instagram.com/rbmk_band/"
-                >
-                  <img src={igicon} alt="IG"></img>
-                </a>
-              </li>
-              <li className={headerStyles.listItem}>
-                <a
-                  className={headerStyles.links}
-                  href="https://www.facebook.com/"
-                >
-                  <img src={fbicon} alt="FB"></img>
-                </a>
-              </li>
-              <li className={headerStyles.listItem}>
-                <a
-                  className={headerStyles.links}
-                  href="https://www.soundcloud.com"
-                >
-                  <img src={scicon} alt="SC"></img>
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-      <div className={headerStyles.centerSection}>
-        <Link className={headerStyles.links} to="/">
-          <img src={logo} alt="RBMK"></img>
-        </Link>
-      </div>
+        );
+    } else {
+        return null;
+    }
+}
+    return (
+        <div className={headerStyles.header}>
+            <div className={headerStyles.leftSection}>
+                <div className={headerStyles.socialsIcons}>
+                    <ul className={headerStyles.list}>
+                        <li className={headerStyles.listItem}>
+                                <a className={headerStyles.links} href="https://www.youtube.com/">
+                                  <Icon name="youtube" />
+                                </a>
+                            </li>
+                            <li className={headerStyles.listItem}>
+                                <a className={headerStyles.links} href="https://www.instagram.com/rbmk_band/">
+                                  <Icon name="instagram" />
+                                </a>
+                            </li>
+                            <li className={headerStyles.listItem}>
+                              <a className={headerStyles.links} href="https://www.facebook.com">
+                                <Icon name="facebook" />                               
+                              </a> 
+                            </li>
+                            <li className={headerStyles.listItem}>
+                                <a className={headerStyles.links} href="https://www.soundcloud.com/rbmk.band">
+                                  <Icon name="soundcloud" />
+                                </a>
+                            </li>
+                        </ul>
+                </div>
+            </div>
+            <IsHomePage />
       <div className={headerStyles.rightSection}>
         <nav>
           <ul className={headerStyles.list}>
@@ -84,10 +67,15 @@ const Header = () => {
           </ul>
         </nav>
       </div>
+      <div className = {headerStyles.hamburgerMenu}>
+            <a onClick={() => setOpen(!open)}><Icon name="ham" /></a>
+            {open && <BurgerMenu />}
+      </div>
     </div>
-  )
+      )
 }
 
 export default Header
 
-// react prop isLogo for other pages - conditional rendering
+
+

@@ -1,0 +1,131 @@
+.header {
+  background-color: black;
+  height: 8vh;
+  justify-content: space-between;
+  display: flex;
+  padding-left: 25px;
+  padding-right: 20px;
+}
+
+.leftSection {
+  float: none;
+  display: none;
+
+  @include large {
+    display: block;
+    text-align: left;
+    float: left;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 15%;
+  }  
+}
+
+.centerSection {
+  
+  display: none;
+  @include large {
+    display: block;
+    text-align: center;
+    margin: auto;
+  }
+}
+
+.rightSection {
+  display: none;
+  @include large {
+    display: block;
+    float: right;
+    margin-top: auto;
+    margin-bottom: auto;
+    max-width: 33%;
+  }
+}
+
+.hamburgerMenu {
+  display: block;
+  margin-top: auto;
+  margin-bottom: auto;
+  @include large {
+    display: none;
+  }
+}
+
+.hamLinks {
+  overflow: hidden;
+  z-index: 100;
+  position: absolute;
+  top: 8vh;
+  background-color: black;
+  width: 100%;
+  left: 0;
+  @include large {
+    display: none;
+  }
+}
+
+.hamLinkyLinks {
+  color: white;
+  display: block;
+  font-size: 25px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: Bold;
+  text-decoration: none;
+  border: 1px solid lightslategray;
+  text-align: center;
+  font-style: italic;
+  height: 4vh;
+}
+
+.links {
+  color: white;
+  font-size: 25px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: Bold;
+  text-decoration: none;
+  font-style: italic;
+}
+.links img {
+  max-height: 60px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.icons:hover {
+  fill: #888888;
+}
+
+svg:hover {
+  fill: #888888;
+}
+
+.list {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+}
+
+.listItem {
+  float: none;
+  display: block;
+  text-align: left;
+  @include large {
+    margin-right: 1.5em;
+  }
+}
+
+.socialsIcons {
+  display: block;
+}
+
+
+.links:hover {color: #888888};
+
+.mobileLabel {
+  display: inline;
+  @include large {
+    display: none;
+  }
+}

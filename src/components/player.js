@@ -91,10 +91,6 @@ const MediaPlayer = ({ isEnabled }) => {
     setSeekValue,
   } = useAudio(songFilename)
 
-  //console.log(song ? song : "No song ready!")
-
-  //const song = new Audio(currentSong.filename)
-
   // Nothing needs to happen when the seeking starts
   const seekStart = () => {}
 

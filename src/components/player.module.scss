@@ -1,11 +1,18 @@
 .player {
-  width: 410px;
+  @include large {
+    width: 410px;
+  }
+  width: 80%;
+
   height: 120px;
+
   box-sizing: border-box;
+
   padding: 7px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
+
   border: 4px solid #5d59b7;
   color: #ffffff;
   background-color: #000000;

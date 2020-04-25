@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { Button, Slider, FormattedTime } from "react-player-controls"
-import playerStyles from "./player.module.css"
+import playerStyles from "./player.module.scss"
 
 import playImg from "../images/play.svg"
 import pauseImg from "../images/pause.svg"

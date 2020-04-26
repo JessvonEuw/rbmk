@@ -13,7 +13,7 @@ const Header = () => {
     if (window.location.pathname !== '/') {
         return (
           <div className={headerStyles.centerSection}>
-          <Link className={headerStyles.links} to="/">
+          <Link className={headerStyles.logoLinks} to="/">
             <img src={logo} alt="RBMK"></img>
           </Link>
         </div>

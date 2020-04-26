@@ -18,7 +18,7 @@ const Burger = ({open}) => {
         <a className={headerStyles.hamLinkyLinks} to="https://www.youtube.com/channel/UCEz4ejRyIzClwBmBZmV3htg">
           YouTube
         </a>
-        <a className={headerStyles.hamLinkyLinks} to="https://www.instagram.com/rbmk_band/">
+        <a className={headerStyles.hamLinkyLinks} to="https://www.instagram.com/rbmk.band/">
           Instagram
         </a>
 

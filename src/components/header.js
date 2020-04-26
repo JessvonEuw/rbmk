@@ -33,7 +33,7 @@ const Header = () => {
                                 </a>
                             </li>
                             <li className={headerStyles.listItem}>
-                                <a className={headerStyles.links} href="https://www.instagram.com/rbmk_band/">
+                                <a className={headerStyles.links} href="https://www.instagram.com/rbmk.band/">
                                   <Icon name="instagram" />
                                 </a>
                             </li>

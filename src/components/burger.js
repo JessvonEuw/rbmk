@@ -9,24 +9,24 @@ const Burger = ({open}) => {
     return (
         <div className = {headerStyles.hamLinks}>
 
-        <Link className={headerStyles.hamLinkyLinks} to="/theBand">
+        <Link className={headerStyles.hamLinkyLinks} to="/about">
           The Band
         </Link>
         <Link className={headerStyles.hamLinkyLinks} to="/bookUs">
           Book Us
         </Link>
-        <a className={headerStyles.hamLinkyLinks} to="https://www.youtube.com/channel/UCEz4ejRyIzClwBmBZmV3htg">
+        <a className={headerStyles.hamLinkyLinks} href="https://www.youtube.com/channel/UCEz4ejRyIzClwBmBZmV3htg">
           YouTube
         </a>
-        <a className={headerStyles.hamLinkyLinks} to="https://www.instagram.com/rbmk.band/">
+        <a className={headerStyles.hamLinkyLinks} href="https://www.instagram.com/rbmk.band/">
           Instagram
         </a>
 
-        <a className={headerStyles.hamLinkyLinks} to="https://www.facebook.com/RBMK-Band-114374710250620/">
+        <a className={headerStyles.hamLinkyLinks} href="https://www.facebook.com/RBMK-Band-114374710250620/">
           Facebook
         </a>
 
-        <a className={headerStyles.hamLinkyLinks} to="https://soundcloud.com/user-417592303">
+        <a className={headerStyles.hamLinkyLinks} href="https://soundcloud.com/user-417592303">
           SoundCloud
         </a>
 

@@ -55,7 +55,7 @@ const Header = () => {
         <nav>
           <ul className={headerStyles.list}>
             <li className={headerStyles.listItem}>
-              <Link className={headerStyles.links} to="/theBand">
+              <Link className={headerStyles.links} to="/about">
                 The Band
               </Link>
             </li>

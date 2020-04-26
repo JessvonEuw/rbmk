@@ -28,7 +28,7 @@ const Header = () => {
                 <div className={headerStyles.socialsIcons}>
                     <ul className={headerStyles.list}>
                         <li className={headerStyles.listItem}>
-                                <a className={headerStyles.links} href="https://www.youtube.com/">
+                                <a className={headerStyles.links} href="https://www.youtube.com/channel/UCEz4ejRyIzClwBmBZmV3htg">
                                   <Icon name="youtube" />
                                 </a>
                             </li>
@@ -38,12 +38,12 @@ const Header = () => {
                                 </a>
                             </li>
                             <li className={headerStyles.listItem}>
-                              <a className={headerStyles.links} href="https://www.facebook.com">
+                              <a className={headerStyles.links} href="https://www.facebook.com/RBMK-Band-114374710250620/">
                                 <Icon name="facebook" />                               
                               </a> 
                             </li>
                             <li className={headerStyles.listItem}>
-                                <a className={headerStyles.links} href="https://www.soundcloud.com/rbmk.band">
+                                <a className={headerStyles.links} href="https://soundcloud.com/user-417592303">
                                   <Icon name="soundcloud" />
                                 </a>
                             </li>

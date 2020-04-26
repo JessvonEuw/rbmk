@@ -15,18 +15,18 @@ const Burger = ({open}) => {
         <Link className={headerStyles.hamLinkyLinks} to="/bookUs">
           Book Us
         </Link>
-        <a className={headerStyles.hamLinkyLinks} to="https://www.youtube.com/">
+        <a className={headerStyles.hamLinkyLinks} to="https://www.youtube.com/channel/UCEz4ejRyIzClwBmBZmV3htg">
           YouTube
         </a>
         <a className={headerStyles.hamLinkyLinks} to="https://www.instagram.com/rbmk_band/">
           Instagram
         </a>
 
-        <a className={headerStyles.hamLinkyLinks} to="https://www.facebook.com/">
+        <a className={headerStyles.hamLinkyLinks} to="https://www.facebook.com/RBMK-Band-114374710250620/">
           Facebook
         </a>
 
-        <a className={headerStyles.hamLinkyLinks} to="https://www.soundcloud.com/rbmk.band">
+        <a className={headerStyles.hamLinkyLinks} to="https://soundcloud.com/user-417592303">
           SoundCloud
         </a>
 

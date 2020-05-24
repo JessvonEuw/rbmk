@@ -1,0 +1,67 @@
+.content {
+  position: relative;
+  height: 92vh;
+  width: 100%;
+  background: url("../images/contact-mobile.jpg"), no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include large {
+    background: url("../images/contact-1.jpg"), no-repeat;
+    background-size: cover;
+    justify-content: center;
+  }
+}
+
+.info-section {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 95%;
+  padding: 3% 7%;
+  background-color: $black1;
+  border: 8px solid $purple;
+
+  @include medium {
+    width: 60%;
+  }
+
+  h1 {
+    color: $white1;
+    font-size: pxToRem(40);
+    margin-bottom: pxToRem(45);
+  }
+
+  p {
+    color: $white1;
+    font-size: pxToRem(20);
+    text-align: center;
+    margin-bottom: pxToRem(35);
+  }
+}
+
+.header {
+  color: $white1;
+  font-size: pxToRem(40);
+  margin-bottom: pxToRem(45);
+  text-align: center;
+}
+
+.title {
+  color: $purple;
+  font-size: pxToRem(22);
+  font-weight: bold;
+  margin-bottom: pxToRem(20);
+  text-align: center;
+}
+
+.text {
+  color: $white1;
+  font-size: pxToRem(22);
+  margin-bottom: pxToRem(35);
+  text-align: center;
+}

@@ -8,7 +8,8 @@ import songFilename from "../media/current_song.mp3"
 
 // The audio hook
 const useAudio = songSrc => {
-  const [audio] = useState(new Audio(songSrc))
+  const audioInit = typeof window !== "undefined" ? new Audio(songSrc) : null
+  const [audio] = useState(audioInit)
   const [playing, setPlaying] = useState(false)
   const [currentTime, setCurrentTime] = useState(0)
   const [duration, setDuration] = useState()

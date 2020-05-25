@@ -8,7 +8,9 @@ import BurgerMenu from "./burger"
 const Header = () => {
   const [open, setOpen] = useState(false)
   function IsHomePage() {
-    if (window.location.pathname !== "/") {
+    const pageCheck = typeof window !== "undefined" ? window.location.href : ""
+
+    if (pageCheck) {
       return (
         <div className={headerStyles.centerSection}>
           <Link className={headerStyles.logoLinks} to="/">

@@ -7,7 +7,20 @@ import BurgerMenu from "./burger"
 
 const Header = () => {
   const [open, setOpen] = useState(false)
-
+  function IsHomePage() {
+    const path = typeof window !== "undefined" ? window.location.pathname : ""
+    if (path !== "/") {
+      return (
+        <div className={headerStyles.centerSection}>
+          <Link className={headerStyles.logoLinks} to="/">
+            <img src={logo} alt="RBMK"></img>
+          </Link>
+        </div>
+      )
+    } else {
+      return null
+    }
+  }
   return (
     <div className={headerStyles.header}>
       <div className={headerStyles.leftSection}>
@@ -48,14 +61,7 @@ const Header = () => {
           </ul>
         </div>
       </div>
-      {typeof window !== "undefined" && window.location.pathname !== "/" ? (
-        <div className={headerStyles.centerSection}>
-          <Link className={headerStyles.logoLinks} to="/">
-            <img src={logo} alt="RBMK"></img>
-          </Link>
-        </div>
-      ) : null}
-
+      <IsHomePage />
       <div className={headerStyles.rightSection}>
         <nav>
           <ul className={headerStyles.list}>

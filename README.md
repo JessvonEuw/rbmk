@@ -17,6 +17,15 @@ Development is still on-going. Continued work will include:
 - Update songs
 - Improved contact page styling
   </p>
+  
+ **To Run the Project Locally**
+ 1. Clone the repo
+ 2. Run `npm install` from the top level directory
+ 3. Run `gatsby develop` from the top level directory
+ 4. The site is now running at `http://localhost:8000`
+ 
+ ** Note: Keep the below generic instructions in for simple information for my fellow developers**
+ 
 
 _Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.org/docs/gatsby-starters/)._
 

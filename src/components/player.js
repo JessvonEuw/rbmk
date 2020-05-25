@@ -76,7 +76,7 @@ const MediaPlayer = ({ isEnabled }) => {
 
   // Setting up the song variables
   const currentSong = {
-    title: '"Doom Days" Cover',
+    title: "The Storm",
     filename: songFilename,
   }
 

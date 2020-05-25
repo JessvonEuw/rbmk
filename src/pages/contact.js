@@ -3,9 +3,9 @@ import Layout from "../components/layout"
 import Section from "../components/Section"
 import ContactStyles from "./contact.module.scss"
 
-const aboutPage = () => {
+const aboutPage = ({ location }) => {
   return (
-    <Layout>
+    <Layout location={location}>
       <div className={ContactStyles.content}>
         <Section>
           <h1 className={ContactStyles.header}>Talk to Us</h1>

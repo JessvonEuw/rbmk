@@ -3,9 +3,9 @@ import Layout from "../components/layout"
 import Section from "../components/Section"
 import AboutStyles from "./about.module.scss"
 
-const aboutPage = () => {
+const aboutPage = ({ location }) => {
   return (
-    <Layout>
+    <Layout location={location}>
       <div className={AboutStyles.content}>
         <Section>
           <h1 className={AboutStyles.header}>About</h1>

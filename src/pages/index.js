@@ -4,9 +4,9 @@ import Footer from "../components/footer"
 import IndexStyles from "./index.module.scss"
 import logo from "../images/logo.svg"
 
-const homePage = () => {
+const homePage = ({ location }) => {
   return (
-    <Layout>
+    <Layout location={location}>
       <div className={IndexStyles.content}>
         <img className={IndexStyles.logo} src={logo} alt="RBMK"></img>
         <div className={IndexStyles.footerPosition}>

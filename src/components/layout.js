@@ -1,6 +1,6 @@
 import React from "react"
 import Header from "./header"
-import layoutStyles from "./Layout.module.scss"
+import layoutStyles from "./layout.module.scss"
 
 const Layout = props => {
   return (

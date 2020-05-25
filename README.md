@@ -5,10 +5,18 @@
   </a>
 </p>
 <h1 align="center">
-  Gatsby's hello-world starter
+  RBMK's Gatsby Site
 </h1>
 
-Kick off your project with this hello-world boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
+<p>
+This project is a small website built for RBMK. Two of the builders of this website are completely new to React, with on of these two quite new to Javascript in general. It was a great learning project and they have done a great job.
+
+Development is still on-going. Continued work will include:
+
+- Finish mobile styling
+- Update songs
+- Improved contact page styling
+  </p>
 
 _Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.org/docs/gatsby-starters/)._
 

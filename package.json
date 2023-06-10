@@ -15,7 +15,7 @@
   "dependencies": {
     "10": "0.0.1",
     "core-js": "^3.6.5",
-    "gatsby": "^2.22.10",
+    "gatsby": "^4.25.7",
     "gatsby-plugin-sass": "^2.3.2",
     "gatsby-plugin-sharp": "^2.6.9",
     "gatsby-source-filesystem": "^2.3.8",
